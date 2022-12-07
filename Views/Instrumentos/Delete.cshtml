@@ -1,0 +1,81 @@
+﻿@model ProjetoFinalAcadNet.Models.Instrumento
+
+@{
+    ViewData["Title"] = "Deletar";
+}
+
+<h1>Deletar instrumento</h1>
+
+<h3>Quer deletar este instrumento?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Marca)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Marca)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Peso)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Peso)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataFabricado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataFabricado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.QntdEstoque)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.QntdEstoque)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sopro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sopro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Corda)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Corda)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Percursao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Percursao)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Deletar" class="btn btn-danger" /> <br />
+        <a asp-action="Index">Voltar</a>
+        <hr />
+    </form>
+</div>
