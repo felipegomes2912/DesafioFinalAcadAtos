@@ -74,8 +74,9 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Deletar" class="btn btn-danger" /> <br />
-        <a asp-action="Index">Voltar</a>
+        <input type="submit" value="Deletar" class="btn btn-danger" />
+        <input asp-action="Index" type="submit" value="Voltar" class="btn btn-success" /> <br />
+        @*<a asp-action="Index">Voltar</a>*@
         <hr />
     </form>
 </div>
