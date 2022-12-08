@@ -72,7 +72,9 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> <br>
-    <a asp-action="Index">Voltar</a>
+    <input asp-action="Edit" type="submit" value="Editar" class="btn btn-primary" />
+    <input asp-action="Index" type="submit" value="Voltar" class="btn btn-outline-primary" /> <br />
+    @*<a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> 
+    <a asp-action="Index">Voltar</a>*@
     <hr />
 </div>
