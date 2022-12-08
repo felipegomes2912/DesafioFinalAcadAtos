@@ -1,89 +1,98 @@
 ﻿@model IEnumerable<ProjetoFinalAcadNet.Models.Instrumento>
 
 @{
-    ViewData["Title"] = "WikInstrumentos";
+	ViewData["Title"] = "WikInstrumentos";
 }
 
-<h1>WikInstrumentos</h1>
+<h1 class="text-center">WikInstrumentos</h1>
 
 <p>
-    <a asp-action="Create">Adicionar instrumento</a>
+	<form>
+		<input asp-action="Create" type="submit" value="Adicionar instrumento" class="btn btn-success" />
+	</form>
+	@*<a asp-action="Create">Adicionar instrumento</a>*@
 </p>
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Marca)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descricao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Peso)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataFabricado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.QntdEstoque)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sopro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Corda)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Percursao)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Marca)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Peso)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataFabricado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.QntdEstoque)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sopro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Corda)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Percursao)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> <br>
-                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> <br>
-                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
-            </td>
-        </tr>
-}
-    </tbody>
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Nome)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Marca)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Descricao)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Cor)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Peso)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.DataFabricado)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.QntdEstoque)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Sopro)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Corda)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Percursao)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Nome)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Marca)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Descricao)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Cor)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Peso)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.DataFabricado)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.QntdEstoque)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Sopro)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Corda)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Percursao)
+				</td>
+				<td>
+					<form>
+						<input asp-route-id="@item.Id" asp-action="Edit" type="submit" value="Editar" class="btn btn-primary" />
+						<input asp-route-id="@item.Id" asp-action="Details" type="submit" value="Detalhes" class="btn btn-secondary" />
+						<input asp-route-id="@item.Id" asp-action="Delete" type="submit" value="Excluir" class="btn btn-danger" />
+					</form>
+					@*<a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+				<a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+				<a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>*@
+				</td>
+			</tr>
+		}
+	</tbody>
 </table>
