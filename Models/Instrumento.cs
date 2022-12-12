@@ -33,7 +33,9 @@ public partial class Instrumento
 
     [Column("dataFabricado")]
     [Display(Name = "Data de registro no sistema")]
-    public DateTime DataFabricado { get; set; }
+	[DataType(DataType.Date)]
+	[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+	public DateTime DataFabricado { get; set; }
 
     [Column("qntdEstoque")]
     [Display(Name = "Quantidade em estoque")]
