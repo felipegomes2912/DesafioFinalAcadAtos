@@ -1,80 +1,90 @@
 ﻿@model ProjetoFinalAcadNet.Models.Instrumento
 
 @{
-    ViewData["Title"] = "Registrar";
+	ViewData["Title"] = "Registrar";
 }
 
 <h1>Registro de um novo instrumento</h1>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Marca" class="control-label"></label>
-                <input asp-for="Marca" class="form-control" />
-                <span asp-validation-for="Marca" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Descricao" class="control-label"></label>
-                <input asp-for="Descricao" class="form-control" />
-                <span asp-validation-for="Descricao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cor" class="control-label"></label>
-                <input asp-for="Cor" class="form-control" />
-                <span asp-validation-for="Cor" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Peso" class="control-label"></label>
-                <input asp-for="Peso" class="form-control" />
-                <span asp-validation-for="Peso" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataFabricado" class="control-label"></label>
-                <input asp-for="DataFabricado" class="form-control" />
-                <span asp-validation-for="DataFabricado" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QntdEstoque" class="control-label"></label>
-                <input asp-for="QntdEstoque" class="form-control" />
-                <span asp-validation-for="QntdEstoque" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="radios" value="opcao1" asp-for="Sopro" /> @Html.DisplayNameFor(model => model.Sopro)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="radios" value="opcao2" asp-for="Corda" /> @Html.DisplayNameFor(model => model.Corda)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="radios" value="opcao3" asp-for="Percursao" /> @Html.DisplayNameFor(model => model.Percursao)
-                </label>
-            </div>
-            <br />
-            <div class="form-group">
-                <input type="submit" value="Registrar" class="btn btn-success" />
-                <input asp-action="Index" type="submit" value="Voltar" class="btn btn-outline-primary" />
-            </div>
-        </form>
-    </div>
+	<div class="col-md-4">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="Nome" class="control-label"></label>
+				<input asp-for="Nome" class="form-control" />
+				<span asp-validation-for="Nome" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Marca" class="control-label"></label>
+				<input asp-for="Marca" class="form-control" />
+				<span asp-validation-for="Marca" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Descricao" class="control-label"></label>
+				<input asp-for="Descricao" class="form-control" />
+				<span asp-validation-for="Descricao" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Cor" class="control-label"></label>
+				<input asp-for="Cor" class="form-control" />
+				<span asp-validation-for="Cor" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Peso" class="control-label"></label>
+				<input asp-for="Peso" class="form-control" />
+				<span asp-validation-for="Peso" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="DataFabricado" class="control-label"></label>
+				<input asp-for="DataFabricado" class="form-control" />
+				<span asp-validation-for="DataFabricado" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="QntdEstoque" class="control-label"></label>
+				<input asp-for="QntdEstoque" class="form-control" />
+				<span asp-validation-for="QntdEstoque" class="text-danger"></span>
+			</div>
+			<br />
+			<div class="form-group form-check">
+				<label class="form-check-label">
+					@*<input class="form-check-input" type="radio" name="radios" value="opcao1" asp-for="Sopro" />*@
+					<input class="form-check-input" asp-for="Sopro" /> @Html.DisplayNameFor(model => model.Sopro)
+				</label>
+			</div>
+			<div class="form-group form-check">
+				<label class="form-check-label">
+					@*<input class="form-check-input" type="radio" name="radios" value="opcao2" asp-for="Corda" />*@
+					@*@Html.RadioButtonFor(model=>model.Corda, true, new { Name = "nome" })
+					@Html.DisplayNameFor(model => model.Corda)*@
+					<input class="form-check-input" asp-for="Corda" /> @Html.DisplayNameFor(model => model.Corda)
+				</label>
+			</div>
+			<div class="form-group form-check">
+				<label class="form-check-label">
+					@*<input class="form-check-input" type="radio" name="radios" value="opcao3" asp-for="Percursao" />*@
+					@*@Html.RadioButtonFor(model=>model.Percursao, true, new { Name = "nome" })
+					@Html.DisplayNameFor(model => model.Percursao)*@
+					<input class="form-check-input" asp-for="Percursao" /> @Html.DisplayNameFor(model => model.Percursao)
+				</label>
+			</div>
+			<br />
+			<div class="form-group">
+				<input type="submit" value="Registrar" class="btn btn-success" />
+				<input asp-action="Index" type="submit" value="Voltar" class="btn btn-outline-primary" />
+			</div>
+		</form>
+	</div>
 </div>
 
 <div>
-    @*<a asp-action="Index">Voltar</a>*@
-    <br />
-    <hr />
+	@*<a asp-action="Index">Voltar</a>*@
+	<br />
+	<hr />
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -41,15 +42,15 @@ public partial class Instrumento
     [Display(Name = "Quantidade em estoque")]
     public int QntdEstoque { get; set; }
 
-    [Column("sopro")]
+	[Column("sopro")]
     [Display(Name = "Sopro")]
     public bool Sopro { get; set; }
 
-    [Column("corda")]
+	[Column("corda")]
     [Display(Name = "Corda")]
     public bool Corda { get; set; }
 
-    [Column("percursao")]
+	[Column("percursao")]
     [Display(Name = "Percursão")]
     public bool Percursao { get; set; }
 }
