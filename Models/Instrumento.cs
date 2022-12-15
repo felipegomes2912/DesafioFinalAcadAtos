@@ -33,13 +33,13 @@ public partial class Instrumento
     public int Peso { get; set; }
 
     [Column("dataFabricado")]
-    [Display(Name = "Data de registro no sistema")]
+    [Display(Name = "Data de registro")]
 	[DataType(DataType.Date)]
 	[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
 	public DateTime DataFabricado { get; set; }
 
     [Column("qntdEstoque")]
-    [Display(Name = "Quantidade em estoque")]
+    [Display(Name = "Qntd. em estoque")]
     public int QntdEstoque { get; set; }
 
 	[Column("sopro")]
